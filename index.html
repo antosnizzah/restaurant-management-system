@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        .tabs {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+        }
+
+        .tab a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .tab a:hover {
+            background-color: #575757;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .content {
+            display: none;
+            text-align: center;
+        }
+
+        .content:target {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Antony's Restaurant Management System</h1>
+        </header>
+        <nav>
+            <ul class="tabs">
+                <li class="tab"><a href="#home">Home</a></li>
+                <li class="tab"><a href="#menu">Menu</a></li>
+                <li class="tab"><a href="#orders">Orders</a></li>
+                <li class="tab"><a href="#reservations">Reservations</a></li>
+                <li class="tab"><a href="#documentation">Documentation</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="home" class="content">
+                <h2>Welcome to Antony's Restaurant Management System</h2>
+                <p>Manage your restaurant with ease and efficiency.</p>
+            </section>
+            <section id="menu" class="content">
+                <h2>Menu</h2>
+                <p>Manage the restaurant's menu items.</p>
+            </section>
+            <section id="orders" class="content">
+                <h2>Orders</h2>
+                <p>Track and manage customer orders.</p>
+            </section>
+            <section id="reservations" class="content">
+                <h2>Reservations</h2>
+                <p>Manage table reservations.</p>
+            </section>
+            <section id="documentation" class="content">
+                <h2>Documentation</h2>
+                <p>Home Documentation for using the restaurant management system.</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

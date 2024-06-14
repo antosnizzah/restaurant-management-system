@@ -18,13 +18,19 @@ import { RestaurantOwnerRouter } from './restaurant_owner/restaurant_owner.route
 import { StatusCatalogRouter } from './status_catalog/status_catalog.router';
 import { authRouter, authupdateRouter } from './auth/auth.router';
 import assert from 'assert';
+import {readFileSync} from 'fs';
 
 
 const app = new Hono();
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
-});
+app.get('/', async(c) => {
+  try{
+    let html = (readFileSync('./index.html', 'utf-8'))
+    return c.html(html)
+  }catch (error: any){
+return c.json({error: error.message, status:500})
+  }
+})
 
 
 app.notFound((c) => {
