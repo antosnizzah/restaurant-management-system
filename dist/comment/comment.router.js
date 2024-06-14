@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CommentRouter = void 0;
+const hono_1 = require("hono");
+const comment_controller_1 = require("./comment.controller");
+const bearAuth_1 = require("../middleware/bearAuth");
+exports.CommentRouter = new hono_1.Hono();
+exports.CommentRouter.get("/comment", comment_controller_1.getCommentController);
+exports.CommentRouter.get("/comment/:id", comment_controller_1.getCommentByIdController);
+exports.CommentRouter.put("/comment/:id", comment_controller_1.updateCommentController);
+exports.CommentRouter.delete("/comment/:id", bearAuth_1.adminRoleAuth, comment_controller_1.deleteCommentController);
+exports.CommentRouter.post("/comment", comment_controller_1.createCommentController);

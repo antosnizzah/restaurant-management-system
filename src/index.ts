@@ -46,7 +46,7 @@ app.route("/", RestaurantOwnerRouter)
 app.route("/", stateRouter)
 app.route("/", StatusCatalogRouter)
 app.route("auth/", authRouter)
-app.route("/", authupdateRouter)
+
 
 
 assert(process.env.PORT, "PORT is not set in the .env file")
