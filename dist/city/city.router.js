@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CityRouter = void 0;
+const hono_1 = require("hono");
+const city_controller_1 = require("./city.controller");
+exports.CityRouter = new hono_1.Hono();
+const bearAuth_1 = require("../middleware/bearAuth");
+exports.CityRouter.get("/city/:id", city_controller_1.getCityByIdController);
+exports.CityRouter.get("/city", city_controller_1.getCityController);
+exports.CityRouter.delete("/city/:id", bearAuth_1.adminRoleAuth, city_controller_1.deleteCityController);
+exports.CityRouter.post("/city", bearAuth_1.adminRoleAuth, city_controller_1.createCityController);
+exports.CityRouter.put("/city/:id", bearAuth_1.adminRoleAuth, city_controller_1.updateCityController);

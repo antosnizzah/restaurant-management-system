@@ -32,10 +32,10 @@ Content-Type: application/json
 
 {
    
-    "username": "pinchez",
-    "user_id": 8,
+    "username": "erico mue",
+    "user_id": 11,
      "role": "Driver",
-
+     "email": "antohsnizzah@gmail.com",
     "password": "pass"
   }
 

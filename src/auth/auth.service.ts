@@ -12,19 +12,7 @@ export const createAuthorizeUsersService = async (user: TIAuthorizeUsers): Promi
     return "user created successfully";
 }
 
-// update autuhorization
-export const updateAuthorizeUsersService = async (id: number, user: TIAuthorizeUsers): Promise<string | null> => {
-    try {
-        const result = await db.update(AuthorizeUsersTable).set(user).where(eq(AuthorizeUsersTable.id, id));
-        if (result.rowCount === 0) { // Use result.affectedRows instead of result.affected
-            return null;
-        }
-        return "user updated successfully";
-    } catch (error) {
-        console.error('Database update error:', error);
-        return null;
-    }
-}
+
 
 // create a login service
 export const userLoginService = async (user: TSAuthorizeUsers) => {

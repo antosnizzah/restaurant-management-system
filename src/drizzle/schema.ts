@@ -21,7 +21,9 @@ export const AuthorizeUsersTable = pgTable("authorizeusers", {
     user_id: integer("user_id").notNull().references(() => UsersTable.id, { onDelete: "cascade" }),
     password: varchar("password").notNull(),
     username: varchar("username").notNull(),
-    role: roleEnum("role").default("user")
+    role: roleEnum("role").default("user"),
+    verificationToken: varchar("verificationToken"),
+    verified: boolean("verified").default(false)
 });
 
 

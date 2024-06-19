@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StatusCatalogRouter = void 0;
+const hono_1 = require("hono");
+const status_catalog_controller_1 = require("./status_catalog.controller");
+exports.StatusCatalogRouter = new hono_1.Hono();
+exports.StatusCatalogRouter.get("/status_catalog/:id", status_catalog_controller_1.getStatusCatalogByIdController);
+exports.StatusCatalogRouter.get("/status_catalog", status_catalog_controller_1.getStatusCatalogController);
+exports.StatusCatalogRouter.post("/status_catalog", status_catalog_controller_1.createStatusCatalogController);
+exports.StatusCatalogRouter.delete("/status_catalog/:id", status_catalog_controller_1.deleteStatusCatalogController);
+exports.StatusCatalogRouter.put("/status_catalog/:id", status_catalog_controller_1.updateStatusCatalogController);

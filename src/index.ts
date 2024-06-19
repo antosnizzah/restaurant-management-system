@@ -1,7 +1,8 @@
 import { serve } from '@hono/node-server'
 import { Context, Hono } from 'hono'
 
-import dotenv from 'dotenv/config';
+
+import  "dotenv/config";
 import{ userRouter } from './users/user.router'
 import { stateRouter } from './state/state.router';
 import { AddressRouter } from './address/address.router';
@@ -19,7 +20,7 @@ import { StatusCatalogRouter } from './status_catalog/status_catalog.router';
 import { authRouter, authupdateRouter } from './auth/auth.router';
 import assert from 'assert';
 import {readFileSync} from 'fs';
-
+import { sendRegistrationEmailTemplate } from './mails/emailservices';
 
 const app = new Hono();
 
@@ -64,3 +65,8 @@ serve({
 console.log(`Server is running on port ${process.env.PORT} 📢`)
 
 
+const arg1 = 'value1';
+const arg2 = 'value2';
+const arg3 = 'value3';
+const arg4 = 'value4';
+sendRegistrationEmailTemplate(arg1, arg2, arg3, arg4);
